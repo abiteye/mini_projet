@@ -1,3 +1,34 @@
+<?php
+session_start();
+include ("fonctions.php");
+#inclusion du fichier json
+$donnee = file_get_contents('fichier.json');
+$tabdon = json_decode($donnee, true); 
+?>
+<?php
+#validation des champs 
+$login=$mdp="";
+$loginUser=$passwordUser="";
+if (isset($_POST['connecter'])) {  
+    #Recupération des variables du formulaire
+    $login=$_POST['login'];
+    $mdp=$_POST['password'];
+    $sortie=connexion($login, $mdp);
+        if($sortie==$tabadmin){
+
+            header("location:accueil-admin.php");
+        }
+        elseif($sortie=$tabjoueur) {
+            header("location:accueil-joueur.php"); 
+
+        }
+        else {
+            header("location:connexion.php");
+        }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +47,7 @@
                 <p>Login Form</p><input id="bouton" type="submit" value="x"> 
             </div>
             <div id="bas">
-              <form action="" method="post"> 
+              <form action="index.php" method="post"> 
                 <input id="login" type="text" placeholder="Login" name="login">
                 <img id="image1" src="Images/Icônes/ic-login.png" alt="l'icone dulogin"><br>
                 <input id="password" type="password" placeholder="Password" name="password">

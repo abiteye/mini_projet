@@ -1,0 +1,23 @@
+{
+    "admins": [{
+        "login": "abiteye66",
+        "password": "1822",
+        "prenom": "Amath",
+        "nom": "Biteye",
+        "avatar": "image.jpg"
+
+    }, {
+        "login": "ibou",
+        "password": "2088",
+        "prenom": "Ibrahima",
+        "nom": "thiam",
+        "avatar": "image.jpg"
+    }],
+    "joueurs": [{
+        "login": "zale",
+        "password": "5666",
+        "prenom": "Saliou",
+        "nom": "Niang",
+        "avatar": "image.png"
+    }]
+}
