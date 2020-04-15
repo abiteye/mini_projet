@@ -1,32 +1,14 @@
 <?php
-session_start();
-include ("fonctions.php");
-#inclusion du fichier json
-$donnee = file_get_contents('fichier.json');
-$tabdon = json_decode($donnee, true); 
-?>
-<?php
-#validation des champs 
-$login=$mdp="";
-$loginUser=$passwordUser="";
-if (isset($_POST['connecter'])) {  
-    #Recupération des variables du formulaire
-    $login=$_POST['login'];
-    $mdp=$_POST['password'];
-    $sortie=connexion($login, $mdp);
-        if($sortie==$tabadmin){
-
-            header("location:accueil-admin.php");
+    if(isset($_POST['connecter'])) {
+        $login=$_POST['login'];
+        $pwd=$_POST['pwd'];
+        $resultat=connexion($login,$pwd);
+        if($resultat=="error"){
+            echo "Login ou mot de passe incorrect";
+        }else{
+            header("location:index.php?lien=" .$resultat);
         }
-        elseif($sortie=$tabjoueur) {
-            header("location:accueil-joueur.php"); 
-
-        }
-        else {
-            header("location:connexion.php");
-        }
-}
-
+    }
 ?>
 
 <!DOCTYPE html>
@@ -34,32 +16,65 @@ if (isset($_POST['connecter'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="miniprojet.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/quizz.css"/>
     <title>Page de connexion</title>
 </head>
 <body>
-    <?php include ("entete.php");?>
+  <div class="conteneur">
+    <div class="container">  
+      <div class="container-header">
+          <div class="title">Login Form</div>
+      </div>
+      <div class="container-body">
+          <form action="" method="post" id="form-connexion">
+              <div class="input-form">
+                  <div class="icon-form icon-form-login"></div>
+                  <input type="text" class="form-control" error="error-1" name="login" id="" placeholder="Login">
+                  <div class="error-form" id="error-1"></div>
+              </div>
+              <div class="input-form">
+                  <div class="icon-form icon-form-pwd"></div>
+                  <input type="password" class="form-control" error="error-2" name="pwd" id="" placeholder="Password">
+                  <div class="error-form" id="error-2"></div>
+              </div>
+              <div class="input-form">
+                  <button type="submit" class="bouton-form" name="connecter" id="">Connexion</button>
+                  <a href="" class="link-form" >S'inscrire pour jouer</a>
+              </div>
+          </form>
+      </div>
+    </div>  
+  </div> 
+<script>
+        const inputs= document.getElementsByTagName("input");
+        for(input of inputs){
+            input.addEventListener("keyup", function(e){
+                if(e.target.hasAttribute("error")) {
+                    var idDivError=e.target.getAttribute("error");
+                    document.getElementById(idDivError).innerText=""
 
-    <div class="conteneur">
+                }
+            })
+        }
 
-        <div class="ouverture">
-            <div id="haut">
-                <p>Login Form</p><input id="bouton" type="submit" value="x"> 
-            </div>
-            <div id="bas">
-              <form action="index.php" method="post"> 
-                <input id="login" type="text" placeholder="Login" name="login">
-                <img id="image1" src="Images/Icônes/ic-login.png" alt="l'icone dulogin"><br>
-                <input id="password" type="password" placeholder="Password" name="password">
-                <img id="image2" src="Images/Icônes/ic-password.png" alt="l'icone du mot de passe"><br>
-                <input id="boutonconnecter" type="submit" name="connecter" value="Connexion">
-                <a href="inscription.php">S'inscrire pour jouer?</a> 
-              </form> 
-            </div>
-
-        </div>
-
-    </div>
+    document.getElementById("form-connexion").addEventListener("submit", function(e){
+        const inputs= document.getElementsByTagName("input");
+        var error=false;
+            for(input of inputs){
+                if(input.hasAttribute("error")){
+                    var idDivError=input.getAttribute("error");
+                        if(!input.value){
+                            document.getElementById(idDivError).innerText="Ce champ est obligatoire"
+                            error=true
+                        }
+                }
+            }
+    if(error){
+        e.preventDefault();
+        return false;
+    }        
+    })
+</script>    
 
 </body>
 </html>

@@ -1,0 +1,18 @@
+[{
+        "prenom": "Amath",
+        "nom": "Biteye",
+        "login": "abiteye66",
+        "password": "1822",
+        "profil": "admin",
+        "photo": "image.jpg"
+    },
+
+    {
+        "prenom": "Saliou",
+        "nom": "Niang",
+        "login": "zale",
+        "password": "2088",
+        "profil": "joueur",
+        "photo": "image.jpg"
+    }
+]
