@@ -36,11 +36,11 @@
                   <div class="icon-form icon-form-pwd"></div>
                   <input type="password" class="form-control" error="error-2" name="pwd" id="" placeholder="Password">
                   <div class="error-form" id="error-2"></div>
-              </div>
+              </div> 
               <div class="input-form">
                   <button type="submit" class="bouton-form" name="connecter" id="">Connexion</button>
-                  <a href="" class="link-form" >S'inscrire pour jouer</a>
-              </div>
+                  <a href="index.php?lien=inscriptionjoueur" class="link-form" >S'inscrire pour jouer</a>
+              </div> 
           </form>
       </div>
     </div>  
@@ -56,7 +56,6 @@
                 }
             })
         }
-
     document.getElementById("form-connexion").addEventListener("submit", function(e){
         const inputs= document.getElementsByTagName("input");
         var error=false;

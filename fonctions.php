@@ -21,9 +21,9 @@ function connexion($login,$pwd){
   }
   return "error";
 }
-#Verification de la connexion
+#Verification de l'etat de la connexion
 function is_connet(){
-  if(!isset($_SESSION['statut'])){  
+  if(!isset($_SESSION['statut'])){ 
     header("location:index.php");
   }
 }
