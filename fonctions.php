@@ -33,4 +33,25 @@ function deconnexion(){
       unset($_SESSION['statut']);
       session_destroy();
 }
+#fonction permettant de faire linscription d'un user
+function addData($utilisateur){
+  $utilisateur=array();
+           
+
+  $data= file_get_contents('../data/utilisateur.json');
+
+  $data= json_decode($data, true);    
+
+  $data[]= $utilisateur;
+
+  $data= json_encode($data);
+
+    if (file_put_contents('../data/utilisateur.json', $data)) {
+      return true;
+    }else{
+      return false;
+    }  
+  
+}
+# inscription()
 ?>

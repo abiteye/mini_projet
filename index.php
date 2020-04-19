@@ -29,7 +29,7 @@
                     break;    
                 }
             }else{
-                if(isset($_GET['statut']) && $_GET['statut']==="logout"){
+                if(isset($_GET['statut']) && $_GET['statut']==="logout"){ 
                     deconnexion();
                 }
                 require_once('../pages/connexion.php');
