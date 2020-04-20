@@ -9,7 +9,7 @@
 <body>
 <div class="form-joueur">
     <div class="titre-ins"><b>S'INSCRIRE</b><br>
-        Pour tester votre niveau de culture générale             
+        Pour tester votre niveau de culture générale.             
     </div>
     <div class="input-ins-form">
         <div class=>Prénom</div>
@@ -37,14 +37,20 @@
         <div class="error-form-ins" id=""></div>
     </div>
     <div class="input-ins-form"> 
-        <div class=>Avatar<input type="file" class="form-avatar-form" error="" name="Choisir un fichier" id=""></div>          
-        <div class="error-form-ins" id=""></div> 
+        <div class=>Avatar<input class="form-avatar-form" type="file" name="photo" onchange="loadFile(event)"></div>
+        <img src="" alt="" id="output" class="avatar-active-jou">
+        <script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) 
+    }
+  }; 
+</script>          
     </div>
     <div class="">
         <button type="submit" class="btn-compte" name="" id="">Créer compte</button> 
-    </div>
-    <div class="avatar-active-jou">
-        
     </div>
 </div>
 </body>

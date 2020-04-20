@@ -1,5 +1,28 @@
 <?php
-#Enregistrement dans le fichier json
+#Enregistrement des photos dans le dossier photos du projet quizz.
+
+if(!empty($_FILES))
+{
+    $file_name= $_FILES['photo']['name'];
+    $file_extention= strrchr($file_name, ".");
+
+    $file_tmp_name= $_FILES['photo']['tmp_name'];
+    $file_dest= "../photos/".$file_name;
+
+    $extentions_autorisees= array('.jpg', '.jpeg', '.png');
+    if(in_array($file_extention, $extentions_autorisees)){
+        if(move_uploaded_file($file_tmp_name, $file_dest)){
+            echo "Fichier envoyé avec succes ";
+        }else{
+            echo "Une erreur est survenue lors de l'envoi du fichier";
+        }
+    }else{
+        echo "Seuls les fichiers PNG et JPG sont autorisées";
+    }
+
+
+}
+#Enregistrement des données dans le fichier json.
         if(isset($_POST['creer'])) 
         {
             $utilisateur=array();
@@ -8,7 +31,7 @@
             $utilisateur['nom']=$_POST['nom'];
             $utilisateur['login']=$_POST['login'];
             $utilisateur['pwd']=$_POST['pwd'];
-            $utilisateur['photo']=$_POST['photo'];
+            $utilisateur['photo']=$_FILES['photo']['name'];
 
             $data= file_get_contents('../data/utilisateur.json');
 
@@ -28,7 +51,7 @@
     <div class="titre-ins"><b>S'INSCRIRE</b><br>
         Pour proposer des quizz             
     </div>
-  <form action="" method="post" id="form-creation"> 
+  <form action="" method="post" id="form-creation" enctype="multipart/form-data"> 
     <div class="input-ins-form">
         <label for="prenom">Prénom</label><br>
         <input type="text" class="form-control-ins" erreur="erreur-1" name="prenom" id="" placeholder="Prenom">
@@ -56,16 +79,17 @@
     </div>
     <div class="input-ins-form"> 
         <div class=>Avatar        
-        <input type="file" class="form-avatar-form" accept="image/PNG,JPEG" name="photo" onchange="loadFile(event)"></div> 
-        <img id="output" alt="" class="avatar-active" src=""/>          
+        <input type="file" class="form-avatar-form"  name="photo" onchange="loadFile(event)"></div> 
+        <img id="output" alt="" class="avatar-active" src=""/>                  
 <script>
+//Script d'affichage du fichier image.
   var loadFile = function(event) {
     var output = document.getElementById('output');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.onload = function() {
       URL.revokeObjectURL(output.src) 
     }
-  };
+  }; 
 </script>
     </div>
     <div class="form-btn-compte">
