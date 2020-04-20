@@ -187,11 +187,15 @@
         float: left;
         margin-left: 20px;
         margin-top: 10px;
+        border-radius: 80%;
+        border: silver 2px solid;
         background-color: white;
     }
     
     .prenom-nom {
-        text-align: center;
+        text-align: start;
+        color: #f8fdfd;
+        font-size: 30px;
     }
     
     .form-icon-menu {
@@ -354,12 +358,10 @@
     }
     
     .avatar-active-jou {
-        background-image: url(../Images/img5.jpg);
-        background-repeat: no-repeat;
         height: 200px;
         width: 200px;
         float: right;
-        margin-top: -35%;
+        margin-top: -30%;
         margin-right: 20px;
         border-radius: 50%;
         border: #3addd6 2px solid;
@@ -370,4 +372,20 @@
         width: 90%;
         font-size: 10px;
         font-weight: bold;
+    }
+    
+    .container-list-joueur {
+        border-radius: 10px;
+        width: 750px;
+        height: 445px;
+        float: right;
+        border: 1px solid black;
+        background-color: #f8fdfd;
+        margin-top: -10.5cm;
+        margin-right: -22cm;
+    }
+    
+    .titre-joueur {
+        text-align: center;
+        margin-top: 20px;
     }
