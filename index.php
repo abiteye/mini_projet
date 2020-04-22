@@ -25,7 +25,7 @@
                         require_once('../pages/jeux.php');
                     break;    
                     case "inscriptionjoueur": 
-                        require_once('../pages/inscription_joueur.php');
+                        require_once('../pages/inscription.php'); 
                     break;    
                 }
             }else{

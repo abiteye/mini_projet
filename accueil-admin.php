@@ -1,24 +1,25 @@
 <?php
-    is_connet();
+    is_connect();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/quizz.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/quizz.css"/> 
     <title>accueil</title> 
 </head>
 <body>
     <div class="cadre"> 
         <div class="entete1">
             <div class="titre">CRÉER ET PARAMÉTRER VOS QUIZZ</div>
-            <button type="submit" class="dec-form" name=><a class="link-dec-form" href="index.php?statut=logout">Déconnexion</a></button>
+            <button type="submit" class="dec-form" name=>
+            <a class="link-dec-form" href="index.php?statut=logout">Déconnexion</a></button>
         </div>
         <div class="container-menu">
             <div class="profil-form">
                 <img src="<?=$_SESSION['user']['photo'];?>" class="photo-form" alt="">
-                <div class="prenom-nom"><?=$_SESSION['user']['prenom'];?><br><?=$_SESSION['user']['nom'];?></div>
+                <div class="prenom-nom"><?=$_SESSION['user']['prenom'];?><br><?=$_SESSION['user']['nom'];?></div> 
             </div>
             <div class="menu-form">
                 <ul>

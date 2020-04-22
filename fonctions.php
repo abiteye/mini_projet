@@ -1,5 +1,5 @@
 <?php
-#fonction qui trqite les fichiers json
+#fonction qui recupère les fichiers json 
 function getData($file="utilisateur"){
   $data=file_get_contents("../data/".$file.".json");
   $data=json_decode($data, true);
@@ -22,7 +22,7 @@ function connexion($login,$pwd){
   return "error";
 }
 #Verification de l'etat de la connexion
-function is_connet(){
+function is_connect(){
   if(!isset($_SESSION['statut'])){ 
     header("location:index.php");
   }
@@ -33,25 +33,38 @@ function deconnexion(){
       unset($_SESSION['statut']);
       session_destroy();
 }
-#fonction permettant de faire linscription d'un user
-function addData($utilisateur){
-  $utilisateur=array();
-           
+function array_sort($array,$on,$order=SORT_ASC)
+{
+    $new_array = array();
+    $sortable_array = array();
 
-  $data= file_get_contents('../data/utilisateur.json');
+    if (count($array) > 0) {
+        foreach ($array as $k => $v) {
+            if (is_array($v)) {
+                foreach ($v as $k2 => $v2) {
+                    if ($k2 == $on) { 
+                        $sortable_array[$k] = $v2;
+                    }
+                }
+            } else {
+                $sortable_array[$k] = $v;
+            }
+        }
 
-  $data= json_decode($data, true);    
+        switch ($order) {
+            case SORT_ASC:
+                asort($sortable_array);
+                break;
+            case SORT_DESC:
+                arsort($sortable_array);
+                break;
+        }
 
-  $data[]= $utilisateur;
+        foreach ($sortable_array as $k => $v) {
+            $new_array[$k] = $array[$k];
+        }
+    }
 
-  $data= json_encode($data);
-
-    if (file_put_contents('../data/utilisateur.json', $data)) {
-      return true;
-    }else{
-      return false;
-    }  
-  
+    return $new_array;
 }
-# inscription()
 ?>

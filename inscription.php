@@ -14,7 +14,7 @@ if(!empty($_FILES))
         if(move_uploaded_file($file_tmp_name, $file_dest)){
             echo "Fichier envoyé avec succes ";
         }else{
-            echo "Une erreur est survenue lors de l'envoi du fichier";
+            echo "Une erreur est survenue lors de l'envoi du fichier"; 
         }
     }else{
         echo "Seuls les fichiers PNG et JPG sont autorisées";
@@ -25,8 +25,11 @@ if(!empty($_FILES))
 #Enregistrement des données dans le fichier json.
         if(isset($_POST['creer'])) 
         {
-            $utilisateur=array();
+           
 
+        if(isset($_GET['menu'])){
+            $utilisateur=array();
+            $utilisateur['profil']=$_POST['profil'];
             $utilisateur['prenom']=$_POST['prenom'];
             $utilisateur['nom']=$_POST['nom'];
             $utilisateur['login']=$_POST['login'];
@@ -43,14 +46,48 @@ if(!empty($_FILES))
 
             file_put_contents('../data/utilisateur.json', $data);  
         }
+        else{
+            $utilisateur=array();
+            $utilisateur['profil']=$_POST['profil'];
+            $utilisateur['prenom']=$_POST['prenom'];
+            $utilisateur['nom']=$_POST['nom'];
+            $utilisateur['login']=$_POST['login'];
+            $utilisateur['pwd']=$_POST['pwd'];
+            $utilisateur['score']=0; 
+            $utilisateur['photo']=$_FILES['photo']['name'];
+
+            $data= file_get_contents('../data/utilisateur.json');
+
+            $data= json_decode($data, true);    
+
+            $data[]= $utilisateur;
+
+            $data= json_encode($data);
+
+            file_put_contents('../data/utilisateur.json', $data);  
+        }
+        }
 
 ?>
 
 <link rel="stylesheet" type="text/css" href="../css/quizz.css"/>
+<?php
+ if(isset($_GET['menu'])){
+?>
 <div class="container-form">
     <div class="titre-ins"><b>S'INSCRIRE</b><br>
         Pour proposer des quizz             
     </div>
+    <?php
+ }else{
+     ?>
+     <div class="form-joueur">
+    <div class="titre-ins"><b>S'INSCRIRE</b><br>
+        Pour testee votre niveau de culture générale             
+    </div>
+<?php
+ }
+ ?>
   <form action="" method="post" id="form-creation" enctype="multipart/form-data"> 
     <div class="input-ins-form">
         <label for="prenom">Prénom</label><br>
@@ -77,10 +114,14 @@ if(!empty($_FILES))
         <input type="password" class="form-control-ins" erreur="erreur-5" name="pwd" id="" placeholder="Confirmmer Password">
         <div class="erreur-form-ins" id="erreur-5"></div> 
     </div>
-    <div class="input-ins-form"> 
-        <div class=>Avatar        
-        <input type="file" class="form-avatar-form"  name="photo" onchange="loadFile(event)"></div> 
-        <img id="output" alt="" class="avatar-active" src=""/>                  
+    <div class="input-ins-form">
+<?php
+ if(isset($_GET['menu'])){
+?>
+    <div class=>Avatar        
+    <input type="file" class="form-avatar-form"  name="photo" onchange="loadFile(event)"></div> 
+    <img id="output" alt="" class="avatar-active" src=""/>                  
+         
 <script>
 //Script d'affichage du fichier image.
   var loadFile = function(event) {
@@ -92,6 +133,13 @@ if(!empty($_FILES))
   }; 
 </script>
     </div>
+    <?php
+    }else{?>
+        <div class=>Avatar        
+        <input type="file" class="form-avatar-form"  name="photo" onchange="loadFile(event)"></div> 
+        <img id="output" alt="" class="avatar-active-jou" src=""/> 
+        <?php   
+    }?>
     <div class="form-btn-compte">
         <button type="submit" class="btn-compte" name="creer" id="">Créer compte</button> 
     </div>

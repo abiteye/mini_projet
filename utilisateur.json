@@ -1,7 +1,1 @@
-[{ "prenom": "Amath", "nom": "Biteye", "login": "abiteye66", "password": "1822", "profil": "admin", "photo": "..\/Images\/img6.jpg" },
-    { "prenom": "Saliou", "nom": "Niang", "login": "zale", "password": "2088", "profil": "joueur", "photo": "image.jpg" },
-    { "prenom": "Fatou", "nom": "Diene", "login": "fadiene", "pwd": "4838", "photo": "IMG-20170911-WA0001.jpg" },
-    { "prenom": "Mbaye", "nom": "Seck", "login": "diobiss", "pwd": "4522", "photo": "IMG-20170920-WA0122.jpg" },
-    { "prenom": "Mbaye", "nom": "Seck", "login": "diobiss", "pwd": "4522", "photo": "IMG-20170920-WA0122.jpg" },
-    { "prenom": "Aly ", "nom": "Diop", "login": "alain", "pwd": "3838", "photo": "IMG-20170913-WA0054.jpg" }
-]
+[{"prenom":"Mbaye","nom":"Diop","login":"diobiss","pwd":"5422"},{"prenom":"Mbaye","nom":"Diop","login":"diobiss","pwd":"5422"},{"prenom":"Mbaye","nom":"Diop","login":"diobiss","pwd":"4522"},{"prenom":"Mbaye","nom":"Diop","login":"diobiss","pwd":"4522"},{"prenom":"Mbaye","nom":"Diop","login":"diobiss","pwd":"4522"},{"prenom":"Mbaye","nom":"Diop","login":"diobiss","pwd":"4522"}]

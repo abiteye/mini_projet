@@ -379,7 +379,7 @@
         width: 750px;
         height: 445px;
         float: right;
-        border: 1px solid black;
+        border: 1px solid silver;
         background-color: #f8fdfd;
         margin-top: -10.5cm;
         margin-right: -22cm;
@@ -388,4 +388,154 @@
     .titre-joueur {
         text-align: center;
         margin-top: 20px;
+    }
+    
+    table,
+    th,
+    td {
+        border-collapse: collapse;
+    }
+    
+    th,
+    td {
+        padding: 3px;
+        text-align: center;
+    }
+    
+    table {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10px;
+        background-color: #f8fdfd;
+        border: 2px solid #3addd6;
+    }
+    /*page jeux*/
+    
+    .cadre-jeux {
+        background-color: #f8fdfd;
+        height: 535px;
+        width: 98%;
+        margin-left: 15px;
+        margin-top: 3px;
+        position: absolute;
+    }
+    
+    .entete-jeux {
+        background-color: #51bfd0;
+        height: 85px;
+    }
+    
+    .photo-form-joueur {
+        float: left;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-top: 2px;
+        margin-left: 10px;
+        background-color: white;
+    }
+    
+    .prenom-nom-jou {
+        text-align: start;
+        color: #f8fdfd;
+        font-size: 18px;
+        margin-left: 15px;
+        margin-top: -5px;
+        float: left;
+    }
+    
+    .titre-jeux {
+        text-align: center;
+        color: #f8fdfd;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    .link-dec-form-jeux {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .dec-form-jeux {
+        color: #f8fdfd;
+        padding: 10px;
+        margin: 20px;
+        margin-top: -1cm;
+        float: right;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 5px;
+        background-color: #3addd6;
+        border: 1px solid turquoise;
+    }
+    /*.page-paginee {
+        border-radius: 10px;
+        width: 750px;
+        height: 445px;
+        float: right;
+        border: 1px solid silver;
+        background-color: #f8fdfd;
+        margin-top: -10.5cm;
+        margin-right: -22cm;
+    }*/
+    
+    .btn-form-suiv {
+        background-color: #3addd6;
+        float: right;
+        margin-top: 5px;
+        margin-right: 35px;
+        width: 12%;
+        height: 35px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    
+    .btn-suivant {
+        text-decoration: none;
+        color: #f8fdfd;
+    }
+    
+    .bg-page-jeu {
+        background-color: white;
+        border: 1px solid silver;
+        height: 440px;
+        width: 98%;
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+    
+    .partie-score {
+        border: 1px solid silver;
+        width: 28%;
+        height: 370px;
+        float: right;
+        margin-right: 25px;
+        margin-top: 30px;
+    }
+    
+    .partie-jeu {
+        border: 2px solid #3addd6;
+        border-radius: 5%;
+        width: 65%;
+        height: 420px;
+        float: left;
+        margin-left: 25px;
+        margin-top: 20px;
+    }
+    
+    .afficheScore {
+        width: 40%;
+        height: 35px;
+        background-color: white;
+        color: silver;
+        margin-left: 20px;
+    }
+    
+    .top-five {
+        text-align: start;
+        margin: 15px;
+        padding: 10px;
+        font-size: 25px;
+        font-weight: bold;
     }
