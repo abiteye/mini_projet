@@ -17,7 +17,7 @@ if(!isset($_GET['page'])){
 $min=($page-1)*12; $max=$min+12;
 if($page<=1){
     $page=1;
-    $prec='none';
+    $prec='none';                                               
 }elseif($page>$nbrePage){
     $page=$nbrePage;
 }

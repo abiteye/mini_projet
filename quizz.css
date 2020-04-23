@@ -348,10 +348,10 @@
     
     .form-joueur {
         border: 1px solid silver;
-        width: 85%;
-        height: 475px;
-        margin: 50px;
-        margin-top: 10px;
+        width: 96%;
+        height: 510px;
+        margin: 20px;
+        margin-top: 5px;
         position: absolute;
         border-radius: 10px;
         background-color: #f8fdfd;
@@ -361,8 +361,8 @@
         height: 200px;
         width: 200px;
         float: right;
-        margin-top: -30%;
-        margin-right: 20px;
+        margin-top: -28%;
+        margin-right: 80px;
         border-radius: 50%;
         border: #3addd6 2px solid;
     }
@@ -538,4 +538,13 @@
         padding: 10px;
         font-size: 25px;
         font-weight: bold;
+    }
+    
+    .link-top-five {
+        text-decoration: none;
+    }
+    
+    .link-top-fav {
+        text-decoration: none;
+        color: #3addd6;
     }

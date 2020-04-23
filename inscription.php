@@ -10,30 +10,34 @@ if(!empty($_FILES))
     $file_dest= "../photos/".$file_name;
 
     $extentions_autorisees= array('.jpg', '.jpeg', '.png');
+
     if(in_array($file_extention, $extentions_autorisees)){
+
         if(move_uploaded_file($file_tmp_name, $file_dest)){
-            echo "Fichier envoyé avec succes ";
+
+            echo "<script>alert(\"Fichier envoyé avec succes\")</script>";
+
         }else{
-            echo "Une erreur est survenue lors de l'envoi du fichier"; 
+            echo "<script>alert(\"Une erreur est survenue lors de l'envoi du fichier\")</script>";
         }
     }else{
-        echo "Seuls les fichiers PNG et JPG sont autorisées";
+            echo "<script>alert(\"Seuls les fichiers PNG et JPG sont autorisées\")</script>";
     }
 
 
 }
 #Enregistrement des données dans le fichier json.
-        if(isset($_POST['creer'])) 
-        {
+    if(isset($_POST['creer'])) 
+    {
            
 
         if(isset($_GET['menu'])){
             $utilisateur=array();
-            $utilisateur['profil']=$_POST['profil'];
             $utilisateur['prenom']=$_POST['prenom'];
             $utilisateur['nom']=$_POST['nom'];
             $utilisateur['login']=$_POST['login'];
-            $utilisateur['pwd']=$_POST['pwd'];
+            $utilisateur['pwd1']=$_POST['pwd1'];
+            $utilisateur['profil']="admin";
             $utilisateur['photo']=$_FILES['photo']['name'];
 
             $data= file_get_contents('../data/utilisateur.json');
@@ -48,12 +52,12 @@ if(!empty($_FILES))
         }
         else{
             $utilisateur=array();
-            $utilisateur['profil']=$_POST['profil'];
             $utilisateur['prenom']=$_POST['prenom'];
             $utilisateur['nom']=$_POST['nom'];
             $utilisateur['login']=$_POST['login'];
-            $utilisateur['pwd']=$_POST['pwd'];
-            $utilisateur['score']=0; 
+            $utilisateur['pwd1']=$_POST['pwd1'];
+            $utilisateur['profil']="joueur";
+            $utilisateur['score']="0"; 
             $utilisateur['photo']=$_FILES['photo']['name'];
 
             $data= file_get_contents('../data/utilisateur.json');
@@ -66,7 +70,7 @@ if(!empty($_FILES))
 
             file_put_contents('../data/utilisateur.json', $data);  
         }
-        }
+    }
 
 ?>
 
@@ -106,12 +110,28 @@ if(!empty($_FILES))
     </div>
     <div class="input-ins-form">
         <label for="password">Password</label><br>
-        <input type="password" class="form-control-ins" erreur="erreur-4" name="pwd" id="" placeholder="Password">
+        <input type="password" class="form-control-ins" erreur="erreur-4" name="pwd1" id="pwd1" placeholder="Password">
         <div class="erreur-form-ins" id="erreur-4"></div>
     </div>
+<script>
+//Verification des deux mots de passe    
+    function verifpwd()
+ {
+    var pwd1 = document.getElementById("pwd1").value;
+    var pwd2 = document.getElementById("pwd2").value;
+ 
+    if(pwd1 == pwd2)
+    {
+        document.form.submit();
+    }else{        
+        alert("les mots de passe saisis sont différents");
+        }
+ }
+</script>
+
     <div class="input-ins-form">
         <label for="password">Confirmer Password</label><br>
-        <input type="password" class="form-control-ins" erreur="erreur-5" name="pwd" id="" placeholder="Confirmmer Password">
+        <input type="password" class="form-control-ins" erreur="erreur-5" name="pwd2" id="pwd2" onBlur="verifpwd()" placeholder="Confirmmer Password">
         <div class="erreur-form-ins" id="erreur-5"></div> 
     </div>
     <div class="input-ins-form">
@@ -123,7 +143,7 @@ if(!empty($_FILES))
     <img id="output" alt="" class="avatar-active" src=""/>                  
          
 <script>
-//Script d'affichage du fichier image.
+//Script d'affichage du fichier image pour le formulaire admin.
   var loadFile = function(event) {
     var output = document.getElementById('output');
     output.src = URL.createObjectURL(event.target.files[0]);
@@ -133,11 +153,22 @@ if(!empty($_FILES))
   }; 
 </script>
     </div>
-    <?php
-    }else{?>
+    <?php 
+    }else{
+    ?>
         <div class=>Avatar        
         <input type="file" class="form-avatar-form"  name="photo" onchange="loadFile(event)"></div> 
-        <img id="output" alt="" class="avatar-active-jou" src=""/> 
+        <img id="output" alt="" class="avatar-active-jou" src=""/>
+        <script>
+//Script d'affichage du fichier image pour le formulaire joueur.
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) 
+    }
+  }; 
+</script>        
         <?php   
     }?>
     <div class="form-btn-compte">
@@ -175,3 +206,16 @@ if(!empty($_FILES))
     }        
     })
 </script>    
+<?php
+#unicite login
+    if (isset($_POST['pseudo'])) { 
+ 
+        $_POST['pseudo'] = htmlspecialchars($_POST['pseudo']);
+        if (preg_match("#^[a-zA-Z](.[^<>?]){6-20}#", $_POST['pseudo'])) {
+
+            echo "<script>alert(\"le login correct\")</script>"; 
+        } else {
+            echo "<script>alert(\"login mal écrit, il doit commencer par une lettre\")</script>";
+            }
+    } 
+?>

@@ -4,10 +4,8 @@
 
     $liste = getData();
     $liste = array_sort($liste, 'score', SORT_DESC);
-    foreach ($liste as $key => $value) {
-        if ($value['profil'] == 'joueur') {
-            $tableau[]=$value;
-        }
+    foreach ($liste as $key => $value) {        
+        $tableau[]=$value;
     }
     $_SESSION['tableau']= $tableau;
     
@@ -46,10 +44,10 @@
 
         <div class="partie-score">
             <button type="button" class="afficheScore" >
-                <a href="index.php?lien=jeux&choix=topfive">Top scores</a>
+                <a href="index.php?lien=jeux&choix=topfive" class="link-top-five">Top scores</a>
             </button>
             <button type="button" class="afficheScore"> 
-            <a href="index.php?lien=jeux&choix=topfav">Mon meilleur score</a>
+            <a href="index.php?lien=jeux&choix=topfav" class="link-top-fav">Mon meilleur score</a>
             </button>
 <?php
 if(isset($_GET['choix'])){
