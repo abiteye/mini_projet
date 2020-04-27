@@ -1,0 +1,112 @@
+[
+    {
+        "id": 0,
+        "question": "Quels sont les langages web parmi les trois?",
+        "type ": "choix multiple",
+        "reponse": [
+            {
+                "id": 0,
+                "valeur": "R et Java",
+                "bonne_reponse": "oui"
+            }
+        ],
+        "point": 5
+    },
+    {
+        "id": 1,
+        "question": "D'o\u00f9 vient le coronavirus?",
+        "type ": "choix simple",
+        "reponse": [
+            {
+                "id": 0,
+                "valeur": "Italie",
+                "bonne_reponse": "non"
+            },
+            {
+                "id": 1,
+                "valeur": "Chine",
+                "bonne_reponse": "oui"
+            }
+        ],
+        "point": 3
+    },
+    {
+        "id": 2,
+        "question": "Quel terme d\u00e9finit le langage qui s'adapte sur Android et sur Ios?",
+        "type ": "choix texte",
+        "reponse": [
+            {
+                "id": 0,
+                "valeur": "Swift",
+                "bonne_reponse": "oui"
+            }
+        ],
+        "point": 2
+    },
+    {
+        "id": 3,
+        "question": "Quelle est la premi\u00e8re \u00e9cole de codage gratuite au S\u00e9n\u00e9gal?",
+        "type ": "choix simple",
+        "reponse": [
+            {
+                "id": 0,
+                "valeur": "Simplon",
+                "bonne_reponse": "oui"
+            },
+            {
+                "id": 1,
+                "valeur": "Orange Digital Center",
+                "bonne_reponse": "non"
+            }
+        ],
+        "point": 2
+    },
+    {
+        "id": 3,
+        "question": "Quelle est la premi\u00e8re \u00e9cole de codage gratuite au S\u00e9n\u00e9gal?",
+        "type ": "choix simple",
+        "reponse": [
+            {
+                "id": 0,
+                "valeur": "Simplon",
+                "bonne_reponse": "oui"
+            },
+            {
+                "id": 1,
+                "valeur": "Orange Digital Center",
+                "bonne_reponse": "non"
+            }
+        ],
+        "point": 2
+    },
+    {
+        "id": 4,
+        "question": "Quelle est la premi\u00e8re \u00e9cole de codage gratuite au S\u00e9n\u00e9gal?",
+        "type ": "choix simple",
+        "reponse": [
+            {
+                "id": 0,
+                "valeur": "GAFAM",
+                "bonne_reponse": "oui"
+            },
+            {
+                "id": 1,
+                "valeur": "CIA-FBI",
+                "bonne_reponse": "non"
+            }
+        ],
+        "point": 3
+    },
+    {
+        "texte": 1,
+        "type": "simple",
+        "bonne_reponse": [
+            "Dakar"
+        ],
+        "reponsePossible": [
+            "Dakar",
+            "Kaolack"
+        ],
+        "point": "3"
+    }
+]
