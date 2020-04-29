@@ -1,43 +1,49 @@
 <?php
-        if(isset($_POST['btn_save']))
-        {
-            $texte=$_POST['texte'];
-            $texte=preg_match("/^(\s)*[A-Z].+[.?!](\s)*$/",$texte);
-            $nbreDePoint=$_POST['nbreDePoint'];
-            $typeQuestion=$_POST['typeQuestion'];
-            $reponsePossible=$_POST['ReponseMultiple'];
-            $cpt=count($reponsePossible);
-            if($typeQuestion=="multiple"){
-                for($i=0; $i<$cpt; $i++){
-                    if (!empty($_POST['multipleChoice'.$i])) {
-                        $tableauReponse[] = $reponsePossible[$i];
-                    }
-                }
-            }elseif($typeQuestion=="text"){
-                $tableauReponse[] = $reponsePossible[0];
-
-            }elseif($typeQuestion=="simple"){
-                for($i=0; $i<$cpt; $i++){
-                    if($_POST['reponse'] == $i){
-                        $tableauReponse[]= $reponsePossible[$i]; 
-                    }
-                }
+if (isset($_POST['btn_save'])) {
+    //var_dump($_POST);
+    //die();
+    $question=$_POST['question'];
+    $question=preg_match("/^(\s)*[A-Z].+[.?!](\s)*$/",$question);
+    $nbrepoint=$_POST['nbrepoint'];
+    $typeQuestion=$_POST['typeQuestion'];
+    $reponsePossible=$_POST['ReponseMultiple'];
+    $cpt=count($reponsePossible);
+    if($typeQuestion=="multiple"){
+        for($i=1; $i<=$cpt; $i++){
+            if (!empty($_POST['multipleChoice'.$i])) {
+                $tableauReponse[] = $reponsePossible[$i-1];
             }
-
-            $file = "../data/questions.json";
-            $result = file_get_contents($file);
-            $data = json_decode($result, true);
-        
-            $data[] =  array(
-            "texte"=>$texte,
-            "type"=>$typeQuestion,
-            "bonne_reponse" => $tableauReponse, 
-            "reponsePossible" => $reponsePossible,
-            "point" => $nbreDePoint
-             );
-            $json_file = json_encode($data, JSON_PRETTY_PRINT);
-            $stock = file_put_contents($file, $json_file);       
         }
+    }elseif($typeQuestion=="text"){
+        $tableauReponse[] = $reponsePossible[0];
+
+    }elseif($typeQuestion=="simple"){
+        for($i=0; $i<$cpt; $i++){
+            if($_POST['reponse'] == $i+1){
+                $tableauReponse[]= $reponsePossible[$i]; 
+            }
+        }
+    }
+    $file = "../data/questions.json";
+    $result = file_get_contents($file);
+    $data = json_decode($result, true);
+    $id=count($data)+1;
+
+    $data[] =  array(
+        "id"=>$id,
+        "question"=>$question,
+        "type"=>$typeQuestion,
+        "point" => $nbrepoint, 
+        "reponsePossible" => $reponsePossible,
+        "bonne_reponse" => $tableauReponse 
+    );
+    
+    $json_file = json_encode($data, JSON_PRETTY_PRINT);
+    $stock = file_put_contents($file, $json_file);
+    ##############################################
+
+}
+
 ?>
 
 
@@ -47,12 +53,12 @@
         <form method="post" id="form-connexion">
                 <div class="form-input-ques">
                     <label for="">Questions</label> 
-                    <textarea name="texte" id="like-texte" class="form-cont-question1" erreur = 'erreur-12'></textarea>
+                    <input type="text" name="question" id="like-textarea" class="form-cont-question1" erreur='erreur-12'>
                     <div class="erreur-form" id="erreur-12"></div>
                 </div>
                 <div class="form-input-ques" id="aide-question">
                     <label for="">Nbre de points</label>
-                    <input type="number" name="nbreDePoint" 
+                    <input type="number" name="nbrepoint" 
                            class="form-cont-question2" erreur='erreur-13'>
                     <div class="erreur-form" id="erreur-13"></div>
                 </div>
@@ -63,7 +69,7 @@
                             document.getElementById('ajout-question').style.display='inline'">  
                         <option value="">Donnez le type de réponse</option>
                         <option value="text">Choix texte</option>               
-                        <option value="simple">Choix Simple</option>
+                        <option value="simple">Choix simple</option>
                         <option value="multiple">Choix multiple</option>
                     </select>
 
@@ -104,16 +110,16 @@
             cpt++;
             var div = document.createElement("div");
             var label = document.createElement("label");
-            var newtexte = document.createTextNode("Réponse " +cpt);
+            var newquestion = document.createTextNode("Réponse " +cpt);
             var input = document.createElement("input");
             var img = document.createElement('img');
             var diverreur = document.createElement('div');
             diverreur.setAttribute('class', 'erreur-form');
             diverreur.id = 'erreur-'+cpt;
             var checkbox = document.createElement('input');
-            div.id = 'todelete' +cpt;
+            div.id = 'supprimer' +cpt;
             div.setAttribute('class', 'form-input-ques');
-            label.appendChild(newtexte);
+            label.appendChild(newquestion);
             input.id = 'generated-input';
             input.type = 'text';
             input.setAttribute('erreur','erreur-' +cpt);
@@ -121,7 +127,7 @@
             checkbox.name = 'multipleChoice'+cpt;
             input.name = 'ReponseMultiple[]';
             img.src = '../Images/Icônes/ic-supprimer.png ';
-            img.setAttribute("onclick", "document.getElementById('todelete" +cpt+ "').innerHTML=''");
+            img.setAttribute("onclick", "document.getElementById('supprimer" +cpt+ "').innerHTML=''");
             div.appendChild(label);
             div.appendChild(input);
             div.appendChild(checkbox);
@@ -137,15 +143,15 @@
             cpt++;
             var div = document.createElement("div");
             var label = document.createElement("label");
-            var newtexte = document.createTextNode("Réponse "+cpt);
+            var newquestion = document.createTextNode("Réponse "+cpt);
             var input = document.createElement("input");
             var img = document.createElement('img');
             var radio = document.createElement('input');
             var diverreur = document.createElement('div');
             diverreur.setAttribute('class', 'erreur-form');
             diverreur.id = 'erreur-'+cpt;
-            div.id = 'todelete'+cpt;
-            label.appendChild(newtexte);
+            div.id = 'supprimer'+cpt;
+            label.appendChild(newquestion);
             input.id = 'generated-input';
             div.setAttribute('class', 'form-input-ques');
             input.setAttribute('erreur','erreur-'+cpt);
@@ -155,7 +161,7 @@
             radio.value = cpt;
             input.name = 'ReponseMultiple[]';
             img.src = '../Images/Icônes/ic-supprimer.png';
-            img.setAttribute("onclick", "document.getElementById('todelete"+cpt+"').innerHTML=''");
+            img.setAttribute("onclick", "document.getElementById('supprimer"+cpt+"').innerHTML=''");
             div.appendChild(label);
             div.appendChild(input);
             div.appendChild(radio);
@@ -165,20 +171,20 @@
         };
 
 
-        // La fonction pour le choix est texte
+        // La fonction pour le choix est question
         var cpt = 0;
         var choixTexte = function() {
             cpt++;
             var div = document.createElement("div");
             var label = document.createElement("label");
-            var newtexte = document.createTextNode("Reponse");
+            var newquestion = document.createTextNode("Reponse");
             var input = document.createElement("input");
             var diverreur = document.createElement('div');
             diverreur.setAttribute('class', 'erreur-form');
             input.setAttribute('erreur','erreur-'+cpt);
             diverreur.id = 'erreur-'+cpt;
             div.setAttribute('class', 'form-input-ques');
-            label.appendChild(newtexte);
+            label.appendChild(newquestion);
             input.id = 'generated-input';
             input.type = 'text';
             input.name = 'ReponseMultiple[]';
@@ -226,8 +232,7 @@
             if (input.hasAttribute("erreur")) {
                 var idDiverreur = input.getAttribute("erreur");
                 if (!input.value) {
-                    document.getElementById(idDiverreur).innerText
-                    alert("Ces champs sont obligatoires");
+                    document.getElementById(idDiverreur).innerText= "Ce champ est obligatoire"
                     erreur = true
                 }
 

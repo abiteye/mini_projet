@@ -224,7 +224,7 @@
     }
     
     li a.active {
-        background-color: #4CAF50;
+        background-color: red;
         color: #f8fdfd;
     }
     
@@ -614,13 +614,13 @@
     }
     
     #btn-ajout-plus {
-        background-image: url('../Images/Icônes/ic-ajout-réponse.png');
-        background-repeat: no-repeat;
         width: 10%;
         height: 35px;
         float: right;
         margin-right: -30px;
         margin-top: -5px;
+        background-repeat: no-repeat;
+        background-image: url('../Images/Icônes/ic-ajout-réponse.png');
     }
     
     .btn-save {
@@ -628,7 +628,7 @@
         height: 35px;
         float: right;
         margin-right: 10px;
-        margin-top: 135px;
+        margin-top: 115px;
         font-size: 15px;
         font-weight: bold;
         color: white;
@@ -666,27 +666,13 @@
         border: none;
         box-shadow: 1px 1px 1px #3addd6;
         position: relative;
-        left: 5px;
+        left: 15px;
     }
     
-    .btn-form-admin {
-        margin-top: 20px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        border: 1px solid #3addd6;
-        padding: 10px;
-        color: white;
-        background-color: #3addd6;
-        font-size: 15px;
-        font-weight: bold;
+    .form-input-ques>img {
         position: relative;
-        left: 83%
-    }
-    
-    .input-form-question>img {
-        position: relative;
-        left: 10px;
-        top: 4px;
+        left: 20px;
+        top: 5px;
     }
     
     .erreur-form {
