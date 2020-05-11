@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": 1,
         "question": "Les langages web sont?",
         "type": "multiple",
@@ -15,72 +14,172 @@
     },
     {
         "id": 2,
-        "question": "$i+1",
+        "question": "Les langages de programmation web sont?",
         "type": "multiple",
-        "point": "4",
+        "point": "3",
         "reponsePossible": [
-            "HTML",
-            "R",
-            "Java"
+            "Java",
+            "CSS",
+            "python",
+            "php"
         ],
         "bonne_reponse": [
-            "HTML"
+            "Java",
+            "python",
+            "php"
         ]
     },
     {
         "id": 3,
-        "question": 0,
-        "type": "multiple",
-        "point": "4",
+        "question": "Quel terme definit le langage qui s'adapte sur Android et sur Ios?",
+        "type": "text",
+        "point": "2",
         "reponsePossible": [
-            "HTML",
-            "R",
-            "Java"
+            "Swift"
         ],
         "bonne_reponse": [
-            "R"
+            "Swift"
         ]
     },
     {
         "id": 4,
-        "question": 1,
-        "type": "text",
+        "question": "Quelle est la premiere ecole de  codage gratuite au Senegal?",
+        "type": "simple",
         "point": "3",
         "reponsePossible": [
-            "Swift"
+            "Simplon",
+            "ODC"
         ],
         "bonne_reponse": [
-            "Swift"
+            "Simplon"
         ]
     },
     {
         "id": 5,
-        "question": 0,
+        "question": "Qui est le president du Senegal?",
         "type": "multiple",
-        "point": "3",
+        "point": "2",
         "reponsePossible": [
-            "HTML",
-            "R",
-            "Java"
+            "M. SALL",
+            "I. SECK",
+            "O. SONKO"
         ],
         "bonne_reponse": [
-            "HTML",
-            "Java"
+            "M. SALL"
         ]
     },
     {
         "id": 6,
-        "question": 1,
+        "question": "D'ou vient le coronavirus?",
+        "type": "multiple",
+        "point": "2",
+        "reponsePossible": [
+            "Italie",
+            "Chine",
+            "Senegal"
+        ],
+        "bonne_reponse": [
+            "Italie",
+            "Chine"
+        ]
+    },
+    {
+        "id": 7,
+        "question": "Cochez deux villes europeennes parmi les 4 suivantes",
+        "type": "multiple",
+        "point": "4",
+        "reponsePossible": [
+            "Grenoble",
+            "Thiaroye",
+            "Tunis",
+            "Berlin"
+        ],
+        "bonne_reponse": [
+            "Grenoble",
+            "Berlin"
+        ]
+    },
+    {
+        "id": 8,
+        "question": "Qui est le ballon d'or FF de 2007? ",
         "type": "multiple",
         "point": "3",
         "reponsePossible": [
-            "HTML",
-            "CSS",
-            "PHP"
+            "Messi",
+            "Kaka",
+            "Sadio Mane"
         ],
         "bonne_reponse": [
-            "HTML",
-            "PHP"
+            "Kaka"
+        ]
+    },
+    {
+        "id": 9,
+        "question": "Quelle equipe a gagne la ligue des champions en 2005?",
+        "type": "multiple",
+        "point": "3",
+        "reponsePossible": [
+            "Jaraaf",
+            "Milan",
+            "Liverpool"
+        ],
+        "bonne_reponse": [
+            "Liverpool"
+        ]
+    },
+    {
+        "id": 10,
+        "question": "Donne le vainqueur de la Premiere ligue anglaise 2017.",
+        "type": "text",
+        "point": "4",
+        "reponsePossible": [
+            "Man.City"
+        ],
+        "bonne_reponse": [
+            "Man.City"
+        ]
+    },
+    {
+        "id": 11,
+        "question": "Quelle est la region la moins peuplee du Senegal?",
+        "type": "simple",
+        "point": "3",
+        "reponsePossible": [
+            "Louga",
+            "Kedougou"
+        ],
+        "bonne_reponse": [
+            "Kedougou"
+        ]
+    },
+    {
+        "id": 12,
+        "question": "Quelle est la ville la plus polluee au monde?",
+        "type": "multiple",
+        "point": "4",
+        "reponsePossible": [
+            "Dakar",
+            "Pekin",
+            "Lyon"
+        ],
+        "bonne_reponse": [
+            "Pekin"
+        ]
+    },
+    {
+        "id": 13,
+        "question": "Quelles sont les stations de radio les plus ecoutees au Senegal? ",
+        "type": "multiple",
+        "point": "4",
+        "reponsePossible": [
+            "Walf fm",
+            "Radio Kankan",
+            "RFM",
+            "ZIK fm"
+        ],
+        "bonne_reponse": [
+            "Walf fm",
+            "RFM"
         ]
     }
 ]

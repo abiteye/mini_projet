@@ -1,7 +1,7 @@
 <?php
 #fonction qui recupère les fichiers json 
 function getData($file="utilisateur"){
-  $data=file_get_contents("../data/".$file.".json");
+  $data=file_get_contents("./data/".$file.".json");
   $data=json_decode($data, true);
   return $data;
 }
@@ -15,6 +15,8 @@ function connexion($login,$pwd){
         if($user["profil"]=="admin"){
           return "accueil";
         }else{
+          $question = getData('questions');
+          $_SESSION['question']=nbreQuestionParJeu($question);
           return "jeux"; 
         }
       }    
@@ -44,7 +46,7 @@ function array_sort($array,$on,$order=SORT_ASC)
                 foreach ($v as $k2 => $v2) {
                     if ($k2 == $on) { 
                         $sortable_array[$k] = $v2;
-                    }
+                    } 
                 }
             } else {
                 $sortable_array[$k] = $v;
@@ -66,5 +68,70 @@ function array_sort($array,$on,$order=SORT_ASC)
     }
 
     return $new_array;
+}
+
+function is_entier($char) {
+  return (preg_match("/[0-9]/",$char)); 
+}
+##########################################
+function nbreQuestionParJeu($tableauQuestion) {
+  $nombre = getData("nombreQuestion");
+  $tableau = array();
+  while (count($tableau) < $nombre['nombre']) {
+    $aleatoire = rand(0,(count($tableauQuestion)-1));
+    if (!in_array($tableauQuestion[$aleatoire], $tableau)) {
+      $tableau[] = $tableauQuestion[$aleatoire];
+    }
+  }
+  return $tableau;
+}
+
+
+
+function scoreTotal($tableau){
+  $total = 0;
+  for ($i=0; $i < count($tableau) ; $i++) { 
+    $total = $total + $tableau[$i]['score'];
+  }
+  return $total;
+}
+
+
+function score($question){
+  $score = 0;
+  $cocher= '';
+  $multiple = [];
+  $radio = '';
+  for ($i=0; $i < count($question); $i++) { 
+      if ($question[$i]['type'] == 'simple') {
+          for ($j=0; $j < count($question[$i]['reponsePossible']); $j++) { 
+              if ((!empty($question[$i]['answer'])) && in_array($j, $question[$i]['answer'])) {
+                  $cocher = $question[$i]['reponsePossible'][$j];
+              }
+          }
+          if ($cocher === $question[$i]['bonneReponse']) {
+              $score = $score + $question[$i]['score'];
+          }
+      }
+      elseif ($question[$i]['type'] == 'text') {
+          if ((!empty($question[$i]['answer'])) && $question[$i]['answer'] === $question[$i]['bonneReponse']) 
+          {
+              $score = $score + $question[$i]['score'];
+          } 
+      }
+      else{
+          for ($j=0; $j < count($question[$i]['reponsePossible']); $j++) { 
+              if (!empty($question[$i]['answer']) && in_array('result'.$j, $question[$i]['answer'])) {
+                  $multiple[] = $question[$i]['reponsePossible'][$j];
+              }
+          }
+          if ($multiple === $question[$i]['bonneReponse']) {
+              $score = $score + $question[$i]['score'];
+          }
+          $multiple = [];
+      }       
+      
+  }
+  return $score;
 }
 ?>

@@ -2,9 +2,7 @@
 $liste = getData();
 $liste = array_sort($liste, 'score', SORT_DESC);
 foreach ($liste as $key => $value) {
-    if ($value['profil'] == 'joueur') {
-        $tableau[]=$value;
-    }
+    $tableau[]=$value;
 }
 $_SESSION['tableau']= $tableau;
 

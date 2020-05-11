@@ -7,7 +7,7 @@ if(!empty($_FILES))
     $file_extention= strrchr($file_name, ".");
 
     $file_tmp_name= $_FILES['photo']['tmp_name'];
-    $file_dest= "../photos/".$file_name;
+    $file_dest= "./photos/".$file_name;
 
     $extentions_autorisees= array('.jpg', '.jpeg', '.png');
 
@@ -30,7 +30,6 @@ if(!empty($_FILES))
     if(isset($_POST['creer'])) 
     {
            
-
         if(isset($_GET['menu'])){
             $utilisateur=array();
             $utilisateur['prenom']=$_POST['prenom'];
@@ -40,7 +39,7 @@ if(!empty($_FILES))
             $utilisateur['profil']="admin";
             $utilisateur['photo']=$_FILES['photo']['name'];
 
-            $data= file_get_contents('../data/utilisateur.json');
+            $data= file_get_contents('./data/utilisateur.json');
 
             $data= json_decode($data, true);    
 
@@ -48,7 +47,7 @@ if(!empty($_FILES))
 
             $data= json_encode($data);
 
-            file_put_contents('../data/utilisateur.json', $data);  
+            file_put_contents('./data/utilisateur.json', $data);  
         }
         else{
             $utilisateur=array();
@@ -60,7 +59,7 @@ if(!empty($_FILES))
             $utilisateur['score']="0"; 
             $utilisateur['photo']=$_FILES['photo']['name'];
 
-            $data= file_get_contents('../data/utilisateur.json');
+            $data= file_get_contents('./data/utilisateur.json');
 
             $data= json_decode($data, true);    
 
@@ -68,13 +67,13 @@ if(!empty($_FILES))
 
             $data= json_encode($data);
 
-            file_put_contents('../data/utilisateur.json', $data);  
+            file_put_contents('./data/utilisateur.json', $data);  
         }
     }
 
 ?>
 
-<link rel="stylesheet" type="text/css" href="../css/quizz.css"/>
+<link rel="stylesheet" type="text/css" href="./css/quizz.css"/>
 <?php
  if(isset($_GET['menu'])){
 ?>
@@ -87,7 +86,7 @@ if(!empty($_FILES))
      ?>
      <div class="form-joueur">
     <div class="titre-ins"><b>S'INSCRIRE</b><br>
-        Pour testee votre niveau de culture générale             
+        Pour tester votre niveau de culture générale             
     </div>
 <?php
  }
@@ -208,10 +207,10 @@ if(!empty($_FILES))
 </script>    
 <?php
 #unicite login
-    if (isset($_POST['pseudo'])) { 
+    if (isset($_POST['login'])) { 
  
-        $_POST['pseudo'] = htmlspecialchars($_POST['pseudo']);
-        if (preg_match("#^[a-zA-Z](.[^<>?]){6-20}#", $_POST['pseudo'])) {
+        $_POST['login'] = htmlspecialchars($_POST['login']);
+        if (preg_match("#^[a-zA-Z](.[^<>?]){6-20}#", $_POST['login'])) {
 
             echo "<script>alert(\"le login correct\")</script>"; 
         } else {

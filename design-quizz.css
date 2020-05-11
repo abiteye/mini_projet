@@ -1,0 +1,28 @@
+/* Paragraphes en bleu par défaut */
+
+@media all and (max-width: 1024px) {
+    .conteneur {
+        width: auto;
+        margin: auto;
+    }
+}
+
+
+/*@media all and (max-width: 1024px)
+{
+    #bloc_page
+    {
+        width: auto;
+    }
+}
+
+
+ Nouvelles règles si la fenêtre fait au plus 1024px de large 
+
+@media screen and (max-width: 1024px) {
+    p {
+        color: red;
+        background-color: black;
+        font-size: 1.2em;
+    }
+}*/

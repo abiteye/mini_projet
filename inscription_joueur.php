@@ -37,14 +37,15 @@
         <div class="error-form-ins" id=""></div>
     </div>
     <div class="input-ins-form"> 
-        <div class=>Avatar<input class="form-avatar-form" type="file" name="photo" onchange="loadFile(event)"></div>
+        <div class=>Avatar
+        <input class="form-avatar-form" type="file" name="photo" onchange="loadFile(event)"></div>
         <img src="" alt="" id="output" class="avatar-active-jou">
         <script>
   var loadFile = function(event) {
     var output = document.getElementById('output');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.onload = function() {
-      URL.revokeObjectURL(output.src) 
+      URL.revokeObjectURL(output.src)                              
     }
   }; 
 </script>          

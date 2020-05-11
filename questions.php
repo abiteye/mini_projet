@@ -1,9 +1,7 @@
 <?php
-if (isset($_POST['btn_save'])) {
-    //var_dump($_POST);
-    //die();
+if (isset($_POST['btn_save'])){
+    
     $question=$_POST['question'];
-    $question=preg_match("/^(\s)*[A-Z].+[.?!](\s)*$/",$question);
     $nbrepoint=$_POST['nbrepoint'];
     $typeQuestion=$_POST['typeQuestion'];
     $reponsePossible=$_POST['ReponseMultiple'];
@@ -27,7 +25,7 @@ if (isset($_POST['btn_save'])) {
     $file = "../data/questions.json";
     $result = file_get_contents($file);
     $data = json_decode($result, true);
-    $id=count($data)+1;
+    $id= count($data)+1;
 
     $data[] =  array(
         "id"=>$id,
@@ -38,10 +36,8 @@ if (isset($_POST['btn_save'])) {
         "bonne_reponse" => $tableauReponse 
     );
     
-    $json_file = json_encode($data, JSON_PRETTY_PRINT);
-    $stock = file_put_contents($file, $json_file);
-    ##############################################
-
+    $json_file= json_encode($data, JSON_PRETTY_PRINT);
+    $stock= file_put_contents($file, $json_file);
 }
 
 ?>
@@ -52,18 +48,18 @@ if (isset($_POST['btn_save'])) {
     <div class="zone-question">
         <form method="post" id="form-connexion">
                 <div class="form-input-ques">
-                    <label for="">Questions</label> 
+                    <label for="">Questions: </label> 
                     <input type="text" name="question" id="like-textarea" class="form-cont-question1" erreur='erreur-12'>
                     <div class="erreur-form" id="erreur-12"></div>
                 </div>
                 <div class="form-input-ques" id="aide-question">
-                    <label for="">Nbre de points</label>
+                    <label for="">Nbre de points: </label>
                     <input type="number" name="nbrepoint" 
                            class="form-cont-question2" erreur='erreur-13'>
                     <div class="erreur-form" id="erreur-13"></div>
                 </div>
                 <div class="form-input-ques" id="aide-question">
-                    <label for="">Type de Question</label>
+                    <label for="">Type de Question: </label>
                     <select name="typeQuestion" id="aideOption" class="form-cont-question3" 
                             onchange="document.getElementById('type-reponse').innerHTML=''; 
                             document.getElementById('ajout-question').style.display='inline'">  
@@ -126,7 +122,7 @@ if (isset($_POST['btn_save'])) {
             checkbox.type = 'checkbox';
             checkbox.name = 'multipleChoice'+cpt;
             input.name = 'ReponseMultiple[]';
-            img.src = '../Images/Icônes/ic-supprimer.png ';
+            img.src = './Images/Icônes/ic-supprimer.png ';
             img.setAttribute("onclick", "document.getElementById('supprimer" +cpt+ "').innerHTML=''");
             div.appendChild(label);
             div.appendChild(input);
@@ -160,7 +156,7 @@ if (isset($_POST['btn_save'])) {
             radio.name = "reponse";
             radio.value = cpt;
             input.name = 'ReponseMultiple[]';
-            img.src = '../Images/Icônes/ic-supprimer.png';
+            img.src = './Images/Icônes/ic-supprimer.png';
             img.setAttribute("onclick", "document.getElementById('supprimer"+cpt+"').innerHTML=''");
             div.appendChild(label);
             div.appendChild(input);

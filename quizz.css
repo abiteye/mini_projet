@@ -1,683 +1,773 @@
-    /*page principale*/
-    
-    body {
-        padding: 0px;
-        margin: 0px;
-    }
-    /*Background du site*/
-    
-    .entete {
-        background-color: #042425;
-        height: 85px;
-    }
-    
-    .logo {
-        background-image: url("../Images/logo-QuizzSA.png");
-        background-size: 40%;
-        height: 80px;
-        width: 10%;
-        margin-left: 30px;
-        background-repeat: no-repeat;
-    }
-    
-    .entete-text {
-        color: #f8fdfd;
-        position: absolute;
-        top: 25px;
-        left: 40%;
-        font-size: 30px;
-        font-weight: bold;
-    }
-    
+@media screen and (max-width: 1200px) {
     .conteneur {
-        height: 540px;
-        background-image: url("../Images/img-bg.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    /*Page dez connexion*/
-    
-    .container {
-        width: 35%;
-        height: 60%;
-        background-color: #f8fdfd;
-        top: 20%;
-        left: 30%;
-        position: relative;
-    }
-    
-    .container-header {
-        height: 100px;
-        background-color: #51bfd0;
-    }
-    
-    .title {
-        color: #f8fdfd;
-        font-size: 20px;
-        font-weight: bold;
-        padding: 40px;
-    }
-    
-    .input-form {
-        height: 50px;
-        margin: 10px 25px;
-    }
-    
-    .form-control {
-        width: 100%;
-        height: 30px;
-        border-radius: 5px;
-        border: 1px solid silver;
-        font-size: 15px;
-        font-weight: bold;
-    }
-    
-    .error-form {
-        color: red;
-        width: 100%;
-        font-size: 16px;
-        font-weight: bold;
-    }
-    
-    .icon-form {
-        position: relative;
-        top: 45px;
-        left: 96%;
-        width: 30px;
-        height: 35px;
-    }
-    
-    .icon-form-login {
-        background-image: url('../Images/Icônes/ic-login.png');
-        background-repeat: no-repeat;
-    }
-    
-    .icon-form-pwd {
-        background-image: url('../Images/Icônes/ic-password.png');
-        background-repeat: no-repeat;
-    }
-    
-    .bouton-form {
-        color: #f8fdfd;
-        padding: 10px;
-        margin-top: 25px;
-        font-size: 20px;
-        font-weight: bold;
-        border-radius: 5px;
-        background-color: #51bfd0;
-        border: 1px solid #51bfd0;
-    }
-    
-    .link-form {
-        font-size: 20px;
-        font-weight: bold;
-        margin-left: 25px;
-        color: silver;
-        text-decoration: none;
-        position: relative;
-    }
-    /*page admin*/
-    
-    .cadre {
-        background-color: #f8fdfd;
-        width: 96%;
-        height: 535px;
-        top: 1%;
-        left: 2%;
-        position: relative;
-    }
-    
-    .entete1 {
-        background-color: #51bfd0;
-        height: 80px;
-        text-align: center;
-    }
-    
-    .titre {
-        color: #f8fdfd;
-        font-size: 30px;
-        font-weight: bold;
-        padding: 25px;
-    }
-    
-    .dec-form {
-        color: #f8fdfd;
-        padding: 10px;
-        margin: 20px;
-        margin-top: -1.5cm;
-        float: right;
-        font-size: 15px;
-        font-weight: bold;
-        border-radius: 5px;
-        background-color: #3addd6;
-        border: 1px solid #3addd6;
-    }
-    
-    .link-dec-form {
-        text-decoration: none;
-        color: #f8fdfd;
-    }
-    
-    .container-menu {
-        background-color: #f8fdfd;
-        width: 30%;
-        height: 350px;
-        margin: 25px;
-        margin-top: 50px;
-        border-radius: 10px;
-        border: 1px solid silver;
-    }
-    
-    .profil-form {
-        background-color: #51bfd0;
-        height: 130px;
-        margin: 0px;
-    }
-    
-    .menu-form {
-        background-color: #f8fdfd;
-        height: 220px;
-        margin: 0px;
-    }
-    
-    .photo-form {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        float: left;
-        margin-left: 20px;
-        margin-top: 10px;
-        border-radius: 80%;
-        border: silver 2px solid;
-        background-color: white;
-    }
-    
-    .prenom-nom {
-        text-align: start;
-        color: #f8fdfd;
-        font-size: 30px;
-    }
-    
-    .form-icon-menu {
-        float: right;
-    }
-    
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 28%;
-        background-color: #f8fdfd;
-        position: fixed;
-        height: 220px;
-        overflow: auto;
-        position: absolute;
-    }
-    
-    li a {
-        display: block;
-        padding: 16px 16px;
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: bold;
-        color: silver;
-    }
-    
-    li a.active {
-        background-color: red;
-        color: #f8fdfd;
-    }
-    
-    li a:hover {
-        background-color: #EAECEE;
-        color: silver;
-    }
-    
-    .titre-page {
-        width: 100%;
-        height: 10%;
-    }
-    
-    .page-droite {
-        border-radius: 10px;
-        width: 800px;
-        height: 445px;
-        float: right;
-        margin-top: -10.5cm;
-        margin-right: -23cm;
-        border: 1px solid silver;
-        background-color: #f8fdfd;
-    }
-    
-    .titre-page p {
-        font-size: 20px;
-        color: #949494;
-        float: left;
-        margin-left: 40%;
-        margin-top: 9px;
-    }
-    
-    .titre-page input {
-        width: 50px;
-        height: 20px;
-        float: right;
-        margin-right: 20%;
-        margin-top: 9px;
-    }
-    
-    .btn-ok input {
-        width: 35px;
-        height: 25px;
-        background-color: #5e90af;
-        float: right;
-        margin-right: 75px;
-        margin-top: -25px;
-    }
-    /*page inscription*/
-    
-    .container-form {
-        border: 1px solid silver;
-        width: 60%;
-        height: 410px;
-        float: right;
-        margin: 20px;
-        position: absolute;
-        margin-left: 35%;
-        margin-top: -10.5cm;
-        border-radius: 10px;
-        background-color: #f8fdfd;
-    }
-    
-    .titre-ins {
-        margin: 15px;
-        padding: 0px;
-    }
-    
-    .input-ins-form {
-        height: 40px;
-        margin: 15px;
-    }
-    
-    .erreur-form-ins {
-        color: red;
-        width: 100%;
-        font-size: 16px;
-        font-weight: normal;
-    }
-    
-    .form-control-ins {
-        width: 40%;
-        height: 30px;
-        border-radius: 5px;
-        border: 1px solid silver;
-        font-size: 15px;
-        font-weight: bold;
-    }
-    
-    .form-avatar-form {
-        height: 30px;
-        margin-left: 145px;
-        color: #51bfd0;
-    }
-    
-    .form-btn-compte {
-        margin-top: -20px;
-    }
-    
-    .btn-compte {
-        background-color: #51bfd0;
-        color: #f8fdfd;
-        height: 35px;
-        margin: 5px;
-        border-radius: 5px;
-        margin-top: -3cm;
-        margin-left: 85px;
-    }
-    
-    .avatar-active {
-        background-color: #f8fdfd;
-        background-repeat: no-repeat;
-        height: 200px;
-        width: 200px;
-        float: right;
-        margin-top: -50%;
-        margin-right: 20px;
-        border-radius: 50%;
-        border: #3addd6 2px solid;
-    }
-    
-    .form-joueur {
-        border: 1px solid silver;
-        width: 96%;
-        height: 510px;
-        margin: 20px;
-        margin-top: 5px;
-        position: absolute;
-        border-radius: 10px;
-        background-color: #f8fdfd;
-    }
-    
-    .avatar-active-jou {
-        height: 200px;
-        width: 200px;
-        float: right;
-        margin-top: -28%;
-        margin-right: 80px;
-        border-radius: 50%;
-        border: #3addd6 2px solid;
-    }
-    
-    .error-form-ins {
-        color: red;
-        width: 90%;
-        font-size: 10px;
-        font-weight: bold;
-    }
-    
-    .container-list-joueur {
-        border-radius: 10px;
-        width: 750px;
-        height: 445px;
-        float: right;
-        border: 1px solid silver;
-        background-color: #f8fdfd;
-        margin-top: -10.5cm;
-        margin-right: -22cm;
-    }
-    
-    .titre-joueur {
-        text-align: center;
-        margin-top: 20px;
-    }
-    
-    table,
-    th,
-    td {
-        border-collapse: collapse;
-    }
-    
-    th,
-    td {
-        padding: 3px;
-        text-align: center;
-    }
-    
-    table {
-        width: 90%;
-        margin-left: 5%;
-        margin-top: 10px;
-        background-color: #f8fdfd;
-        border: 2px solid #3addd6;
-    }
-    /*page jeux*/
-    
-    .cadre-jeux {
-        background-color: #f8fdfd;
-        height: 535px;
-        width: 98%;
-        margin-left: 15px;
-        margin-top: 3px;
-        position: absolute;
-    }
-    
-    .entete-jeux {
-        background-color: #51bfd0;
-        height: 85px;
-    }
-    
-    .photo-form-joueur {
-        float: left;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        margin-top: 2px;
-        margin-left: 10px;
-        background-color: white;
-    }
-    
-    .prenom-nom-jou {
-        text-align: start;
-        color: #f8fdfd;
-        font-size: 18px;
-        margin-left: 15px;
-        margin-top: -5px;
-        float: left;
-    }
-    
-    .titre-jeux {
-        text-align: center;
-        color: #f8fdfd;
-        font-size: 30px;
-        font-weight: bold;
-    }
-    
-    .link-dec-form-jeux {
-        color: white;
-        text-decoration: none;
-    }
-    
-    .dec-form-jeux {
-        color: #f8fdfd;
-        padding: 10px;
-        margin: 20px;
-        margin-top: -1cm;
-        float: right;
-        font-size: 15px;
-        font-weight: bold;
-        border-radius: 5px;
-        background-color: #3addd6;
-        border: 1px solid turquoise;
-    }
-    /*.page-paginee {
-        border-radius: 10px;
-        width: 750px;
-        height: 445px;
-        float: right;
-        border: 1px solid silver;
-        background-color: #f8fdfd;
-        margin-top: -10.5cm;
-        margin-right: -22cm;
-    }*/
-    
-    .btn-form-suiv {
-        background-color: #3addd6;
-        float: right;
-        margin-top: 5px;
-        margin-right: 35px;
-        width: 12%;
-        height: 35px;
-        font-size: 20px;
-        font-weight: bold;
-        border-radius: 5px;
-    }
-    
-    .btn-suivant {
-        text-decoration: none;
-        color: #f8fdfd;
-    }
-    
-    .bg-page-jeu {
-        background-color: white;
-        border: 1px solid silver;
-        height: 440px;
-        width: 98%;
-        margin-left: 15px;
-        margin-top: 5px;
-    }
-    
-    .partie-score {
-        border: 1px solid silver;
-        width: 28%;
-        height: 370px;
-        float: right;
-        margin-right: 25px;
-        margin-top: 30px;
-    }
-    /*Espace de jeu*/
-    
-    .partie-jeu {
-        border: 2px solid #3addd6;
-        border-radius: 5%;
-        width: 65%;
-        height: 420px;
-        float: left;
-        margin-left: 25px;
-        margin-top: 20px;
-    }
-    /*Tableau d'affichage du score top 5 et du joueur connecte*/
-    
-    .afficheScore {
-        width: 40%;
-        height: 35px;
-        background-color: white;
-        color: silver;
-        margin-left: 20px;
-    }
-    
-    .top-five {
-        text-align: start;
-        margin: 15px;
-        padding: 10px;
-        font-size: 25px;
-        font-weight: bold;
-    }
-    
-    .link-top-five {
-        text-decoration: none;
-    }
-    
-    .link-top-fav {
-        text-decoration: none;
-        color: #3addd6;
-    }
-    /*page question*/
-    
-    .containt-questions {
-        border: 1px solid silver;
-        width: 65%;
-        height: 450px;
-        float: right;
-        margin: 0px;
-        position: absolute;
-        margin-left: 32%;
-        margin-top: -10.6cm;
-        border-radius: 10px;
-        background-color: #f8fdfd;
-    }
-    
-    .titre-question {
-        color: #3addd6;
-        margin-top: 10px;
-        margin-left: 40px;
-        font-size: 30px;
-        font-weight: bold;
-    }
-    
-    .zone-question {
-        width: 80%;
-        height: 385px;
-        border: 2px solid #3addd6;
-        margin-top: 10px;
-        margin-left: 40px;
-        border-radius: 3%;
-        position: relative;
-    }
-    
-    .form-input-ques {
-        margin: 10px;
-        font-size: 20px;
-        font-weight: bold;
-        margin: 20px;
-    }
-    
-    .form-cont-question1 {
-        margin: 5px;
-        width: 80%;
-        height: 80px;
-        margin-top: -15px;
-    }
-    
-    .form-cont-question2 {
-        margin: 5px;
-        width: 10%;
-        height: 30px;
-        margin-top: -5px;
-    }
-    
-    .form-cont-question3 {
-        margin: 10px;
-        width: 65%;
-        height: 35px;
-        margin-top: -5px;
-        font-size: 15px;
-        font-weight: bold;
-    }
-    
-    #btn-ajout-plus {
-        width: 10%;
-        height: 35px;
-        float: right;
-        margin-right: -30px;
-        margin-top: -5px;
-        background-repeat: no-repeat;
-        background-image: url('../Images/Icônes/ic-ajout-réponse.png');
-    }
-    
-    .btn-save {
-        width: 18%;
-        height: 35px;
-        float: right;
-        margin-right: 10px;
-        margin-top: 115px;
-        font-size: 15px;
-        font-weight: bold;
-        color: white;
-        position: relative;
-        background-color: #3addd6;
-    }
-    /*partie input dynamique*/
-    
-    #generated-input {
-        background-color: #f0eeee;
-        border: none;
-        box-shadow: 1px 1px 1px #3addd6;
-        position: relative;
-        left: 10px;
-        height: 40px;
-        width: 70%;
-    }
-    
-    input[type=radio] {
-        border: 0px;
-        width: 20px;
-        height: 20px;
-        position: relative;
-        left: 10px;
-        top: 5px;
-    }
-    
-    input[type=checkbox] {
-        -ms-transform: scale(1.5);
-        -moz-transform: scale(1.5);
-        -webkit-transform: scale(1.5);
-        -o-transform: scale(1.5);
-        transform: scale(1.5);
-        padding: 5px;
-        border: none;
-        box-shadow: 1px 1px 1px #3addd6;
-        position: relative;
-        left: 15px;
-    }
-    
-    .form-input-ques>img {
-        position: relative;
-        left: 20px;
-        top: 5px;
-    }
-    
-    .erreur-form {
-        color: red;
-        width: 100%;
-        font-size: 16px;
-        font-weight: normal;
-    }
+        width: auto;
+    }
+}
+
+
+/*page principale*/
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/*Background du site*/
+
+.entete {
+    background-color: #042425;
+    height: 85px;
+}
+
+.logo {
+    background-image: url("../Images/logo-QuizzSA.png");
+    background-size: 40%;
+    height: 80px;
+    width: 10%;
+    margin-left: 30px;
+    background-repeat: no-repeat;
+}
+
+.entete-text {
+    color: #f8fdfd;
+    position: absolute;
+    top: 25px;
+    left: 40%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.conteneur {
+    width: 100%;
+    height: 540px;
+    background-image: url("../Images/img-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*Page dez connexion*/
+
+.container {
+    width: 35%;
+    height: 60%;
+    background-color: #f8fdfd;
+    top: 20%;
+    left: 30%;
+    position: relative;
+}
+
+.container-header {
+    height: 100px;
+    background-color: #51bfd0;
+}
+
+.title {
+    color: #f8fdfd;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 40px;
+}
+
+.input-form {
+    height: 50px;
+    margin: 10px 25px;
+}
+
+.form-control {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.error-form {
+    color: red;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.icon-form {
+    position: relative;
+    top: 45px;
+    left: 96%;
+    width: 30px;
+    height: 35px;
+}
+
+.icon-form-login {
+    background-image: url('./Images/Icônes/ic-login.png');
+    background-repeat: no-repeat;
+}
+
+.icon-form-pwd {
+    background-image: url('./Images/Icônes/ic-password.png');
+    background-repeat: no-repeat;
+}
+
+.bouton-form {
+    color: #f8fdfd;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #51bfd0;
+    border: 1px solid #51bfd0;
+}
+
+.link-form {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 25px;
+    color: silver;
+    text-decoration: none;
+    position: relative;
+}
+
+
+/*page admin*/
+
+.cadre {
+    background-color: #f8fdfd;
+    width: 96%;
+    height: 535px;
+    top: 1%;
+    left: 2%;
+    position: relative;
+}
+
+.entete1 {
+    background-color: #51bfd0;
+    height: 80px;
+    text-align: center;
+}
+
+.titre {
+    color: #f8fdfd;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 25px;
+}
+
+.dec-form {
+    color: #f8fdfd;
+    padding: 10px;
+    margin: 20px;
+    margin-top: -1.5cm;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #3addd6;
+    border: 1px solid #3addd6;
+}
+
+.link-dec-form {
+    text-decoration: none;
+    color: #f8fdfd;
+}
+
+.container-menu {
+    background-color: #f8fdfd;
+    width: 30%;
+    height: 350px;
+    margin: 25px;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 1px solid silver;
+}
+
+.profil-form {
+    background-color: #51bfd0;
+    height: 130px;
+    margin: 0px;
+}
+
+.menu-form {
+    background-color: #f8fdfd;
+    height: 220px;
+    margin: 0px;
+}
+
+.photo-form {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 80%;
+    border: silver 2px solid;
+    background-color: white;
+}
+
+.prenom-nom {
+    text-align: start;
+    color: #f8fdfd;
+    font-size: 30px;
+}
+
+.form-icon-menu {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 28%;
+    background-color: #f8fdfd;
+    position: fixed;
+    height: 220px;
+    overflow: auto;
+    position: absolute;
+}
+
+li a {
+    display: block;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: silver;
+}
+
+li a.active {
+    background-color: red;
+    color: #f8fdfd;
+}
+
+li a:hover {
+    background-color: #EAECEE;
+    color: silver;
+}
+
+.titre-page {
+    width: 100%;
+    height: 10%;
+}
+
+
+/*page liste question*/
+
+.page-droite {
+    border-radius: 10px;
+    width: 800px;
+    height: 445px;
+    float: right;
+    margin-top: -10.5cm;
+    margin-right: -23cm;
+    border: 1px solid silver;
+    background-color: #f8fdfd;
+}
+
+.titre-page p {
+    font-size: 20px;
+    color: #949494;
+    float: left;
+    margin-left: 40%;
+    margin-top: 9px;
+}
+
+.titre-page input {
+    width: 50px;
+    height: 20px;
+    float: right;
+    margin-right: 25%;
+    margin-top: 9px;
+}
+
+.btn-ok button {
+    width: 35px;
+    height: 28px;
+    background-color: #5e90af;
+    float: right;
+    margin-right: 150px;
+    margin-top: -28px;
+}
+
+.btn-ok-affiche {
+    text-decoration: none;
+    color: white;
+}
+
+.zone-liste-question {
+    width: 75%;
+    height: 360px;
+    border: 2px solid silver;
+    margin-top: 2px;
+    margin-left: 80px;
+    border-radius: 3%;
+    position: relative;
+}
+
+.btn-form-suivant {
+    background-color: #3addd6;
+    float: right;
+    margin-top: 3px;
+    margin-right: 120px;
+    width: 11%;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-form-preced {
+    float: left;
+    margin-top: 3px;
+    margin-left: 80px;
+    width: 11%;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+.btn-liste-question {
+    text-decoration: none;
+    color: #f8fdfd;
+}
+
+
+/*page inscription*/
+
+.container-form {
+    border: 1px solid silver;
+    width: 60%;
+    height: 410px;
+    float: right;
+    margin: 20px;
+    position: absolute;
+    margin-left: 35%;
+    margin-top: -10.5cm;
+    border-radius: 10px;
+    background-color: #f8fdfd;
+}
+
+.titre-ins {
+    margin: 15px;
+    padding: 0px;
+}
+
+.input-ins-form {
+    height: 40px;
+    margin: 15px;
+}
+
+.erreur-form-ins {
+    color: red;
+    width: 100%;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.form-control-ins {
+    width: 40%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.form-avatar-form {
+    height: 30px;
+    margin-left: 145px;
+    color: #51bfd0;
+}
+
+.form-btn-compte {
+    margin-top: -20px;
+}
+
+.btn-compte {
+    background-color: #51bfd0;
+    color: #f8fdfd;
+    height: 35px;
+    margin: 5px;
+    border-radius: 5px;
+    margin-top: -3cm;
+    margin-left: 85px;
+}
+
+.avatar-active {
+    background-color: #f8fdfd;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    float: right;
+    margin-top: -50%;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: #3addd6 2px solid;
+}
+
+.form-joueur {
+    border: 1px solid silver;
+    width: 96%;
+    height: 510px;
+    margin: 20px;
+    margin-top: 5px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #f8fdfd;
+}
+
+.avatar-active-jou {
+    height: 200px;
+    width: 200px;
+    float: right;
+    margin-top: -28%;
+    margin-right: 80px;
+    border-radius: 50%;
+    border: #3addd6 2px solid;
+}
+
+.error-form-ins {
+    color: red;
+    width: 90%;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.container-list-joueur {
+    border-radius: 10px;
+    width: 750px;
+    height: 445px;
+    float: right;
+    border: 1px solid silver;
+    background-color: #f8fdfd;
+    margin-top: -10.5cm;
+    margin-right: -22cm;
+}
+
+.titre-joueur {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 3px;
+    text-align: center;
+}
+
+table {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    background-color: #f8fdfd;
+    border: 2px solid #3addd6;
+}
+
+
+/*page jeux*/
+
+.cadre-jeux {
+    background-color: #f8fdfd;
+    height: 535px;
+    width: 98%;
+    margin-left: 15px;
+    margin-top: 3px;
+    position: absolute;
+}
+
+.entete-jeux {
+    background-color: #51bfd0;
+    height: 85px;
+}
+
+.photo-form-joueur {
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 2px;
+    margin-left: 10px;
+    background-color: white;
+}
+
+.prenom-nom-jou {
+    text-align: start;
+    color: #f8fdfd;
+    font-size: 18px;
+    margin-left: 15px;
+    margin-top: -5px;
+    float: left;
+}
+
+.titre-jeux {
+    text-align: center;
+    color: #f8fdfd;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.link-dec-form-jeux {
+    color: white;
+    text-decoration: none;
+}
+
+.dec-form-jeux {
+    color: #f8fdfd;
+    padding: 10px;
+    margin: 20px;
+    margin-top: -1cm;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #3addd6;
+    border: 1px solid turquoise;
+}
+
+.btn-form-suiv {
+    background-color: #3addd6;
+    float: right;
+    margin-top: 5px;
+    margin-right: 35px;
+    width: 12%;
+    height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-suivant {
+    text-decoration: none;
+    color: #f8fdfd;
+}
+
+.bg-page-jeu {
+    background-color: white;
+    border: 1px solid silver;
+    height: 440px;
+    width: 98%;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.partie-score {
+    border: 1px solid silver;
+    width: 28%;
+    height: 370px;
+    float: right;
+    margin-right: 25px;
+    margin-top: 30px;
+}
+
+
+/*Espace de jeu*/
+
+.partie-jeu {
+    border: 2px solid #3addd6;
+    border-radius: 5%;
+    width: 65%;
+    height: 420px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+
+/*Tableau d'affichage du score top 5 et du joueur connecte*/
+
+.afficheScore {
+    width: 40%;
+    height: 35px;
+    background-color: white;
+    color: silver;
+    margin-left: 20px;
+}
+
+.top-five {
+    text-align: start;
+    margin: 15px;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.link-top-five {
+    text-decoration: none;
+}
+
+.link-top-fav {
+    text-decoration: none;
+    color: #3addd6;
+}
+
+.zone-num-questions {
+    background-color: gainsboro;
+    width: 90%;
+    height: 140px;
+    margin-left: 5%;
+    margin-top: 5px;
+}
+
+.zone-point {
+    background-color: gainsboro;
+    width: 8%;
+    height: 50px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5%;
+}
+
+.zone-aff-questions {
+    border: 1px solid gainsboro;
+    width: 40%;
+    height: 200px;
+    margin-left: 20%;
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/*page question*/
+
+.containt-questions {
+    border: 1px solid gainsboro;
+    width: 65%;
+    height: 450px;
+    float: right;
+    margin: 0px;
+    position: absolute;
+    margin-left: 32%;
+    margin-top: -10.6cm;
+    border-radius: 10px;
+    background-color: #f8fdfd;
+}
+
+.titre-question {
+    color: #3addd6;
+    margin-top: 10px;
+    margin-left: 40px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.zone-question {
+    width: 80%;
+    height: 385px;
+    border: 2px solid #3addd6;
+    margin-top: 10px;
+    margin-left: 40px;
+    border-radius: 3%;
+    position: relative;
+}
+
+.form-input-ques {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.form-cont-question1 {
+    margin: 5px;
+    width: 80%;
+    height: 80px;
+    margin-top: -15px;
+}
+
+.form-cont-question2 {
+    margin: 5px;
+    width: 10%;
+    height: 30px;
+    margin-top: -5px;
+}
+
+.form-cont-question3 {
+    margin: 10px;
+    width: 65%;
+    height: 35px;
+    margin-top: -5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#btn-ajout-plus {
+    width: 10%;
+    height: 35px;
+    float: right;
+    margin-right: -30px;
+    margin-top: -5px;
+    background-repeat: no-repeat;
+    background-image: url('../Images/Icônes/ic-ajout-réponse.png');
+}
+
+.btn-save {
+    width: 18%;
+    height: 35px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 115px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    background-color: #3addd6;
+}
+
+
+/*partie input dynamique*/
+
+#generated-input {
+    background-color: #f0eeee;
+    border: none;
+    box-shadow: 1px 1px 1px #3addd6;
+    position: relative;
+    left: 10px;
+    height: 40px;
+    width: 70%;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+
+input[type=checkbox] {
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+    padding: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px #3addd6;
+    position: relative;
+    left: 15px;
+}
+
+.form-input-ques>img {
+    position: relative;
+    left: 20px;
+    top: 5px;
+}
+
+.erreur-form {
+    color: red;
+    width: 100%;
+    font-size: 16px;
+    font-weight: normal;
+}
